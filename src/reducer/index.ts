@@ -32,6 +32,13 @@ const dataSlice = createSlice({
       };
       state.list.push(newList);
     },
+    editTextTodo: (state, action: PayloadAction<{ id: number; text: string }>) => {
+      const { id, text } = action.payload;
+      const target = state.list.find((item) => item.id === id);
+      if (target) {
+        target.todo = text;
+      }
+    },
     toggleCheckTodo: (state, action: PayloadAction<{ id: number; checked: boolean }>) => {
       const { id, checked } = action.payload;
       const target = state.list.find((item) => item.id === id);
@@ -45,5 +52,5 @@ const dataSlice = createSlice({
   },
 });
 
-export const { setList, addList, toggleCheckTodo, deleteList } = dataSlice.actions;
+export const { setList, addList, editTextTodo, toggleCheckTodo, deleteList } = dataSlice.actions;
 export default dataSlice.reducer;
