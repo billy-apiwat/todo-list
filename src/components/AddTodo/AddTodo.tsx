@@ -54,22 +54,6 @@ function AddTodo() {
           <AddIcon />
         </IconButton>
       </Paper>
-      {/* <TextField
-        className="addTodo-input"
-        variant="outlined"
-        label="Add your todo"
-        value={newTodo}
-        onChange={handleChange}
-      />
-      <Button
-        className="addTodo-btn"
-        variant="contained"
-        onClick={() => {
-          addTotoData(newTodo);
-        }}
-      >
-        Add
-      </Button> */}
     </AddTodoStyle>
   );
 }
